@@ -1,5 +1,11 @@
+import HeroSlide from '~/components/HeroSlide';
+
 function Home() {
-    return <div>Home</div>;
+    return (
+        <>
+            <HeroSlide />
+        </>
+    );
 }
 
 export default Home;

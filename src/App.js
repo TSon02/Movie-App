@@ -1,9 +1,28 @@
+import 'swiper/swiper.min.css';
+import '~/assets/boxicons-2.1.4/css/boxicons.min.css';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Routess from './config/Routes';
+
 function App() {
     return (
-        <div className="App">
-            <a href="/"> Click</a>
-            <iFrame src="https://www.youtube.com/watch?v=Lq-HMuxog3I" width="680" height="480" allowFullScreen></iFrame>
-        </div>
+        <Router className="App">
+            <Routes>
+                <Route
+                    path="*"
+                    element={
+                        <>
+                            <Header />
+                            <Routess />
+                            <Footer />
+                        </>
+                    }
+                />
+            </Routes>
+        </Router>
     );
 }
 
