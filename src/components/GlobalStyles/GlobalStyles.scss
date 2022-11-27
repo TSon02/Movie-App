@@ -75,10 +75,14 @@ iframe {
     margin-bottom: 2rem;
 }
 
+.movies-list__item {
+    padding: 0 2rem;
+}
+
 .section {
     padding: 0 2rem;
 }
 
-.section__header {
+.movies-item__heading {
     @include flex(center, space-between);
 }

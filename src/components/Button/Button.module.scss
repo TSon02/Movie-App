@@ -15,7 +15,7 @@ button {
     position: relative;
 }
 
-.btn-main {
+.main {
     background-color: $main-color;
     color: $white-color;
     box-shadow: 0px 0px 7px 8px #ff00004d;
@@ -25,7 +25,7 @@ button {
     }
 }
 
-.btn-outline {
+.outline {
     border: 3px solid $white-color;
     background-color: transparent;
     color: $white-color;

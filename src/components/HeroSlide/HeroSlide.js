@@ -16,10 +16,9 @@ function HeroSlide() {
     SwiperCore.use([Autoplay]);
 
     const [movieItems, setMovieItems] = useState([]);
-    console.log(movieItems);
     useEffect(() => {
         const getMovies = async () => {
-            const params = { page: 1 };
+            const params = { page: 2 };
             try {
                 const data = await tmdbApi.getMoviesList(movieType.popular, { params });
                 setMovieItems(data.results.slice(0, 4));
@@ -32,14 +31,14 @@ function HeroSlide() {
     }, []);
 
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('slider')}>
             <Swiper
                 className={cx('abc')}
                 modules={[Autoplay]}
                 slidesPerView={1}
                 grabCursor={true}
                 spaceBetween={0}
-                // autoplay={{ delay: 5000, disableOnInteraction: false }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
             >
                 {movieItems.map((movieItem, index) => {
                     return (

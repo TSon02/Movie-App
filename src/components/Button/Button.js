@@ -5,11 +5,11 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Button({ onClick, className, children, outline, small, large }) {
+function Button({ onClick, className, children, small, large, main, outline }) {
     return (
         <button
             onClick={onClick ? onClick : null}
-            className={cx('btn', { [className]: className, outline, small, large })}
+            className={cx('btn', { [className]: className, small, main, large, outline })}
         >
             {children}
         </button>

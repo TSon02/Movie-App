@@ -8,7 +8,6 @@ import tmdbApi, { category } from '~/api/tmdbApi';
 const cx = classNames.bind(styles);
 function HeroSlideItem({ item, className }) {
     let navigate = useNavigate();
-
     async function setActiveModal() {
         const modal = document.querySelector(`#modal_${item.id}`);
 
@@ -16,7 +15,9 @@ function HeroSlideItem({ item, className }) {
 
         const videos = await tmdbApi.getVideos(category.movie, item.id);
         if (videos.results.length > 0) {
-            const videoSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
+            const videoSrc =
+                'https://www.youtube.com/embed/' +
+                (videos.results[0].key ? videos.results[0].key : videos.results[1].key);
             iframe.setAttribute('src', videoSrc);
         } else {
             modal.querySelector(`${'.' + style.modalContainer}`).innerHTML = 'No Trailer';
@@ -35,7 +36,7 @@ function HeroSlideItem({ item, className }) {
 
                         <div className={cx('btns')}>
                             <Button
-                                className="btn-main"
+                                main
                                 large
                                 onClick={() => {
                                     navigate(`/movie/${item.id}`);
@@ -43,7 +44,7 @@ function HeroSlideItem({ item, className }) {
                             >
                                 Watch now
                             </Button>
-                            <Button className="btn-outline" large onClick={setActiveModal}>
+                            <Button outline large onClick={setActiveModal}>
                                 Watch trailer
                             </Button>
                         </div>

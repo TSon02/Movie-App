@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
@@ -23,6 +23,16 @@ const headerNav = [
 ];
 
 function Header() {
+    useEffect(() => {
+        function handleScroll() {
+            if (window.scrollY > 100) {
+                headerRef.current.classList.add(cx('scroll'));
+            } else {
+                headerRef.current.classList.remove(cx('scroll'));
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+    }, []);
     const headerRef = useRef(null);
     return (
         <div className={cx('header')} ref={headerRef}>

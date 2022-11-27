@@ -1,0 +1,47 @@
+.footer {
+    position: relative;
+    padding: 6rem 2rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0.5;
+        position: absolute;
+    }
+
+    .content {
+        max-width: 1000px;
+        position: relative;
+        z-index: 99;
+
+        .content__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+
+        .content__menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .menu-list {
+                margin-top: 16px;
+                display: block;
+
+                li {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}
