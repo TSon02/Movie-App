@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './HeroSlide.module.scss';
 
-import tmdbApi, { category, movieType } from '~/api/tmdbApi';
-import apiConfig from '~/api/apiConfig';
+import tmdbApi, { movieType } from '~/api/tmdbApi';
 import HeroSlideItem from '../HeroSlideItem';
 import Modal from '../Modal/Modal';
 
