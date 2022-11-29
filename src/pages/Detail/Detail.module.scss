@@ -1,3 +1,5 @@
+@use '../../scss/' as *;
+
 .banner {
     padding-top: 50vh;
     background-position: center;
@@ -42,11 +44,19 @@
             background-size: cover;
             border-radius: 30px;
         }
+        @include mobile {
+            display: none;
+        }
     }
 
     .content__info {
         width: 67%;
         margin-left: 2rem;
+
+        @include mobile {
+            width: 100%;
+            margin-left: 0;
+        }
 
         .title {
             font-size: 4rem;
@@ -99,6 +109,11 @@
     margin-bottom: 2rem;
     .title {
         margin-bottom: 1rem;
+    }
+    iframe {
+        @include mobile {
+            height: 200px;
+        }
     }
 }
 

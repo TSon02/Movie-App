@@ -9,7 +9,6 @@ const cx = classNames.bind(styles);
 
 function ListCast({ cate, id }) {
     const [casts, setCasts] = useState([]);
-    console.log(casts);
     useEffect(() => {
         async function getCast() {
             const respone = await tmdbApi.credits(cate, id);

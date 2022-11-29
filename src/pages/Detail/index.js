@@ -44,7 +44,7 @@ const Detail = () => {
 
                     <div className={cx('genres')}>
                         {item.genres &&
-                            item.genres.map((data, index) => {
+                            item.genres.slice(0, 4).map((data, index) => {
                                 return (
                                     <span key={index} className={cx('genres__item')}>
                                         {data.name}

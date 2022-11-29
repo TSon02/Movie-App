@@ -67,6 +67,13 @@
 .item-content {
     @include flex(center, center);
     .item-info {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
         width: 55%;
         padding: 0 2rem;
         position: relative;
@@ -76,6 +83,11 @@
             font-size: 4rem;
             font-weight: 700;
             line-height: 1;
+            @include mobile {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
         }
         .overview {
             margin-top: 3rem;
