@@ -49,5 +49,6 @@ function MovieList({ cate, type, id }) {
 MovieList.propTypes = {
     cate: PropTypes.string.isRequired,
     type: PropTypes.string,
+    id: PropTypes.string,
 };
 export default MovieList;
